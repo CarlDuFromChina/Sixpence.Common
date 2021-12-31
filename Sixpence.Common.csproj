@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>Karl Du</Authors>
+    <Company>Sixpence</Company>
+    <Description>.Net 通用框架</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="log4net" Version="2.0.13" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.22" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.22" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="3.1.22" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="3.1.22" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.22" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.22" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="RestSharp" Version="106.15.0" />
+    <PackageReference Include="System.IO.Packaging" Version="5.0.0" />
+    <PackageReference Include="System.Runtime.Caching" Version="5.0.0" />
+  </ItemGroup>
+
+</Project>
