@@ -61,7 +61,7 @@ namespace Sixpence.Common.Utils
             var ex = Activator.CreateInstance(typeof(T), errorMessage) as T;
             if (ex != null)
             {
-                LogUtils.Error($"{errorId}：{errorMessage}");
+                LogUtil.Error($"{errorId}：{errorMessage}");
                 throw ex;
             }
         }

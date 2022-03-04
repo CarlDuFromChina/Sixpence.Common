@@ -30,7 +30,7 @@ namespace Sixpence.Common.Utils
             }
             catch (Exception ex)
             {
-                LogUtils.Error("图片压缩失败", ex);
+                LogUtil.Error("图片压缩失败", ex);
                 throw ex;
             }
         }

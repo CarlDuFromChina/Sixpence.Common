@@ -15,17 +15,17 @@ namespace Sixpence.Common.Logging
     /// <summary>
     /// 日志工厂类
     /// </summary>
-    public class LogFactory
+    public class LoggerFactory
     {
         private static readonly Object lockObject = new object();
 
-        static LogFactory()
+        static LoggerFactory()
         {
             XmlConfigurator.Configure(new FileInfo(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "log4net.config")));
         }
 
         /// <summary>
-        /// 获取日志
+        /// 获取日志记录器（自定义）
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
@@ -55,7 +55,7 @@ namespace Sixpence.Common.Logging
         }
 
         /// <summary>
-        /// 获取日志实例
+        /// 获取日志记录器（默认实现）
         /// </summary>
         /// <param name="logType"></param>
         /// <returns></returns>

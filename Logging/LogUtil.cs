@@ -8,28 +8,28 @@ namespace Sixpence.Common.Logging
     /// <summary>
     /// 日志帮助类（log信息将会输出到 all.log 里）
     /// </summary>
-    public static class LogUtils
+    public static class LogUtil
     {
         #region 同步写日志
         public static void Debug(string msg)
         {
-            var log = LogFactory.GetLogger(LogType.All);
+            var log = LoggerFactory.GetLogger(LogType.All);
             log.Debug(msg);
         }
         public static void Error(string msg)
         {
-            var log = LogFactory.GetLogger(LogType.Error);
+            var log = LoggerFactory.GetLogger(LogType.Error);
             log.Error(msg);
         }
 
         public static void Error(Exception exception)
         {
-            var log = LogFactory.GetLogger(LogType.Error);
+            var log = LoggerFactory.GetLogger(LogType.Error);
             log.Error(exception.Message, exception);
         }
         public static void Error(string msg, Exception exception)
         {
-            var log = LogFactory.GetLogger(LogType.Error);
+            var log = LoggerFactory.GetLogger(LogType.Error);
             log.Error(msg, exception);
         }
         #endregion
