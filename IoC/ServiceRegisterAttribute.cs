@@ -4,6 +4,10 @@ using System.Text;
 
 namespace Sixpence.Common.IoC
 {
+    /// <summary>
+    /// IoC服务注册
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Interface, AllowMultiple = false)]
     public class ServiceRegisterAttribute : Attribute
     {
     }
