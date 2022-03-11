@@ -66,5 +66,13 @@ namespace Sixpence.Common
             stream.Read(bytes, 0, bytes.Length);
             return bytes;
         }
+
+        /// <summary>
+        /// 转String
+        /// </summary>
+        /// <param name="stream"></param>
+        /// <returns></returns>
+        public static string ToString(this Stream stream)
+            => new StreamReader(stream).ReadToEnd();
     }
 }
