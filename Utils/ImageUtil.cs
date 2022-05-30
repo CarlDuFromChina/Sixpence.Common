@@ -11,10 +11,7 @@ namespace Sixpence.Common.Utils
     {
         public static Stream GetThumbnail(string fullFileName)
         {
-            if (!File.Exists(fullFileName))
-            {
-                throw new SpException("文件不存在", "");
-            }
+            AssertUtil.IsFalse(File.Exists(fullFileName), "文件不存在");
 
             try
             {

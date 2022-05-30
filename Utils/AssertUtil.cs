@@ -12,68 +12,40 @@ namespace Sixpence.Common.Utils
     /// </summary>
     public static class AssertUtil
     {
-        /// <summary>
-        /// 检查是否为真
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="result"></param>
-        /// <param name="errorMessage"></param>
-        /// <param name="errorId"></param>
-        public static void CheckBoolean<T>(bool result, string errorMessage, string errorId)
-            where T : Exception
+        public static void IsTrue(bool condition, string message)
         {
-            if (result)
+            if (condition)
+             Throw(message);
+        }
+
+        public static void IsFalse(bool condition, string message)
+        {
+            IsTrue(!condition, message);
+        }
+
+        public static void IsNull(object anObject, string message)
+        {
+            IsTrue(anObject == null, message);
+        }
+
+        public static void IsNullOrEmpty(string value, string message)
+        {
+            IsTrue(string.IsNullOrEmpty(value), message);
+        }
+
+        public static void IsEmpty<T>(IEnumerable<T> list, string message)
+        {
+            IsTrue(list.IsEmpty(), message);
+        }
+
+        private static void Throw(string message)
+        {
+            if (string.IsNullOrEmpty(message))
             {
-                Assert<T>(errorMessage, errorId);
+                message = "未知错误";
             }
-        }
-
-        /// <summary>
-        /// 检查是否是Null或空字符串
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="value"></param>
-        /// <param name="errorMessage"></param>
-        /// <param name="errorId"></param>
-        public static void CheckIsNullOrEmpty<T>(string value, string errorMessage, string errorId)
-            where T : Exception
-        {
-            if (string.IsNullOrEmpty(value))
-            {
-                Assert<T>(errorMessage, errorId);
-            }
-        }
-
-        /// <summary>
-        /// 检查是否是null
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="value"></param>
-        /// <param name="errorMessage"></param>
-        /// <param name="errorId"></param>
-        public static void CheckNull<T>(object value, string errorMessage, string errorId) where T : Exception
-        {
-            CheckBoolean<T>(value == null, errorMessage, errorId);
-        }
-
-        private static void Assert<T>(string errorMessage, string errorId) where T : Exception
-        {
-            var ex = Activator.CreateInstance(typeof(T), errorMessage) as T;
-            if (ex != null)
-            {
-                LogUtil.Error($"{errorId}：{errorMessage}");
-                throw ex;
-            }
-        }
-
-        /// <summary>
-        /// 是否为空
-        /// </summary>
-        /// <param name="args"></param>
-        /// <returns></returns>
-        public static bool CheckEmpty(params string[] args)
-        {
-            return args.Any(item => string.IsNullOrEmpty(item));
+            LogUtil.Error($"系统错误：{message}");
+            throw new SpException(message);
         }
     }
 }

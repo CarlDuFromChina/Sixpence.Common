@@ -168,7 +168,7 @@ namespace Sixpence.Common.Utils
         public static void CopyFile(string sourcePath, string destPath)
         {
             var fileInfo = new FileInfo(sourcePath);
-            AssertUtil.CheckBoolean<SpException>(fileInfo.Exists == false, $"未找到{fileInfo.Name}配置文件，请检查", "BAE7CF07-8F31-4122-9A94-3E5E247191A0");
+            AssertUtil.IsFalse(fileInfo.Exists, $"未找到{fileInfo.Name}配置文件，请检查");
             if (File.Exists(destPath))
             {
                 File.Delete(destPath);
