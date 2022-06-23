@@ -17,6 +17,11 @@ namespace Sixpence.Common
             return ts == null || ts.Count() == 0;
         }
 
+        public static bool IsNotEmpty<T>(this IEnumerable<T> ts)
+        {
+            return !IsEmpty(ts);
+        }
+
         public static DataTable ToDataTable<T>(this IList<T> data)
         {
             PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(typeof(T));
@@ -63,11 +68,7 @@ namespace Sixpence.Common
                     var propValue = prop?.GetValue(item);
                     if (propValue != null)
                     {
-                        if (propValue is bool)
-                        {
-                            row[c.ColumnName] = (bool)(propValue) ? "1" : "0";
-                        }
-                        else if (propValue is JToken)
+                        if (propValue is JToken)
                         {
                             row[c.ColumnName] = (propValue as JToken);
                         }

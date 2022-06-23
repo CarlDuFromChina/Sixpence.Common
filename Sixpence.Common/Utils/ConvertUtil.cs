@@ -44,6 +44,14 @@ namespace Sixpence.Common.Utils
             if (value is string)
             {
                 var s = value.ToString();
+                if (s.Equals("true", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    return true;
+                }
+                if (s.Equals("false", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    return false;
+                }
                 return s == "1";
             }
 
