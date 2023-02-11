@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -47,14 +46,7 @@ namespace Sixpence.Common
             foreach (DataColumn item in columns)
             {
                 var prop = properties.Find(item.ColumnName, true);
-                if (prop?.PropertyType == typeof(JToken))
-                {
-                    table.Columns.Add(new DataColumn(item.ColumnName, typeof(JToken)));
-                }
-                else
-                {
-                    table.Columns.Add(new DataColumn(item.ColumnName, item.DataType));
-                }
+                table.Columns.Add(new DataColumn(item.ColumnName, item.DataType));
             }
 
             foreach (T item in data)
@@ -68,14 +60,7 @@ namespace Sixpence.Common
                     var propValue = prop?.GetValue(item);
                     if (propValue != null)
                     {
-                        if (propValue is JToken)
-                        {
-                            row[c.ColumnName] = (propValue as JToken);
-                        }
-                        else
-                        {
-                            row[c.ColumnName] = Convert.ChangeType(propValue, c.DataType);
-                        }
+                        row[c.ColumnName] = Convert.ChangeType(propValue, c.DataType);
                     }
                 }
                 table.Rows.Add(row);
