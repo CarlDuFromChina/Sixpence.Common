@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <None Remove="log4net.config" />
+    <None Remove="Crypto\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,4 +32,7 @@
     <PackageReference Include="System.Runtime.Caching" Version="6.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Crypto\" />
+  </ItemGroup>
 </Project>
