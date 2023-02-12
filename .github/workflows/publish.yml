@@ -25,6 +25,6 @@ jobs:
     - name: Test
       run: dotnet test --configuration Release /p:Version=${VERSION} --no-build
     - name: Pack
-      run: dotnet pack ./Sixpence.ORM/Sixpence.ORM.csproj -c Release /p:Version=${VERSION} -o .
+      run: dotnet pack ./Sixpence.Common/Sixpence.Common.csproj -c Release /p:Version=${VERSION} -o .
     - name: Publish
-      run: dotnet nuget push Sixpence.ORM.${VERSION}.nupkg -k ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
+      run: dotnet nuget push Sixpence.Common.${VERSION}.nupkg -k ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
