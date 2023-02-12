@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sixpence.Common.Utils
+namespace Sixpence.Common.Crypto
 {
     /// <summary>
     /// MD5帮助类（单向加密）

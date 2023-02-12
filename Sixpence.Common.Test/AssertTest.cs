@@ -10,10 +10,10 @@ namespace Sixpence.Common.Test
         [TestMethod]
         public void Test()
         {
-            Assert.ThrowsException<SpException>(() => AssertUtil.IsTrue(true, "“Ï≥£≤‚ ‘"), "“Ï≥£≤‚ ‘");
-            Assert.ThrowsException<SpException>(() => AssertUtil.IsNullOrEmpty("", "“Ï≥£≤‚ ‘"), "“Ï≥£≤‚ ‘");
-            Assert.ThrowsException<SpException>(() => AssertUtil.IsNull(null, "“Ï≥£≤‚ ‘"), "“Ï≥£≤‚ ‘");
-            Assert.ThrowsException<SpException>(() => AssertUtil.IsEmpty(new List<string>(), "“Ï≥£≤‚ ‘"), "“Ï≥£≤‚ ‘");
+            Assert.ThrowsException<SpException>(() => AssertUtil.IsTrue(true, ""), "");
+            Assert.ThrowsException<SpException>(() => AssertUtil.IsNullOrEmpty("", ""), "");
+            Assert.ThrowsException<SpException>(() => AssertUtil.IsNull(null, ""), "");
+            Assert.ThrowsException<SpException>(() => AssertUtil.IsEmpty(new List<string>(), ""), "");
         }
     }
 }

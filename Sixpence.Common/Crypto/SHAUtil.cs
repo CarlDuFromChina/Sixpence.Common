@@ -3,7 +3,7 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Sixpence.Common.Utils
+namespace Sixpence.Common.Crypto
 {
     /// <summary>
     /// SHA帮助类
