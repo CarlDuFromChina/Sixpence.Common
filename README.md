@@ -1,10 +1,10 @@
 # Sixpence.Common
 
-> 一个基于 .net core 3.1 的通用工具框架
+> 一个基于 .Net6.0 的通用工具框架
 
 ## 介绍
 
-`Sixpence.Common`基于.net core 3.1，提供了丰富的工具了和扩展类，集成了开发常用的`IoC`、`Logging`和`Config`模块。使用本项目，我相信会帮助你大大提升开发效率
+`Sixpence.Common`基于 .Net6.0，提供了丰富的工具了和扩展类，集成了开发常用的`IoC`、`Logging`和`Config`模块。使用本项目，我相信会帮助你大大提升开发效率
 
 ## 特性
 
